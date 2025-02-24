@@ -1,14 +1,14 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2.0"
+# Define the Jekyll version to match GitHub Pages
+gem "jekyll", "~> 3.9.0"  # Use Jekyll 3.9, which is compatible with GitHub Pages
+gem "github-pages", "~> 227", group: :jekyll_plugins  # Use a supported version of GitHub Pages
+
+# Markdown parser
+gem "kramdown-parser-gfm"
+
+# Avoid dependency conflicts
+gem "terminal-table", "~> 1.4"
+
+# Use Bundler for dependency management
 gem "bundler", "~> 2.3"
-gem "kramdown-parser-gfm", "~> 1.1.0"
-
-# GitHub Pages dependencies
-group :jekyll_plugins do
-  gem "github-pages", group: :jekyll_plugins
-end
-
-# Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
-# do not have a Java counterpart.
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
