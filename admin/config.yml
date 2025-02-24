@@ -1,14 +1,13 @@
 backend:
-  name: github
-  repo: chkapn666/achievers-asylum-site  # Your GitHub repository name
-  branch: master  # Change to your default branch
+  name: git-gateway
+  branch: master  # Change to your branch if it's not "main"
 
-media_folder: "assets/uploads"  # Where uploaded images will be stored
-public_folder: "/uploads"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
-    label: "Blog Posts"
+    label: "Blog"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -16,13 +15,3 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "About Page"
-        name: "about"
-        file: "about.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
