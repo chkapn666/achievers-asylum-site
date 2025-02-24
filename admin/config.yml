@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: chkapn666/achievers-asylum-site  # Replace with your repo name
+  branch: main  # Your default branch
+
+media_folder: "assets/uploads"  # Where images will be stored
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
